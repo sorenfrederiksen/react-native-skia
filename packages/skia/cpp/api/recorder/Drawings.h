@@ -815,7 +815,11 @@ public:
     }
   }
 
-  void draw(DrawingCtx *ctx) { ctx->canvas->drawPicture(props.picture); }
+  void draw(DrawingCtx *ctx) {
+    if (props.picture) {
+      ctx->canvas->drawPicture(props.picture);
+    }
+  }
 };
 
 struct ImageSVGCmdProps {
