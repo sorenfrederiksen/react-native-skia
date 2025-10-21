@@ -81,7 +81,7 @@ private:
       canvas->clear(SK_ColorTRANSPARENT);
       canvas->save();
       canvas->scale(pd, pd);
-      if (_picture != nullptr) {
+      if (_picture != nullptr && _picture.get() != nullptr) {
         canvas->drawPicture(_picture);
       }
       canvas->restore();

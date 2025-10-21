@@ -530,7 +530,9 @@ public:
 
   JSI_HOST_FUNCTION(drawPicture) {
     auto picture = JsiSkPicture::fromValue(runtime, arguments[0]);
-    _canvas->drawPicture(picture);
+    if (picture) {
+      _canvas->drawPicture(picture);
+    }
     return jsi::Value::undefined();
   }
 
